@@ -1,6 +1,7 @@
-<p class="text-center"><%= @data["weather"].first["main"] %></p>
-
-<div>
+<div class="w-full text-center">
   <p><%= Date.today.strftime("%A, %B %d") %></p>
-  <img src="http://openweathermap.org/img/wn/<%= @data["weather"].first["icon"]%>@2x.png">
+  <img class="mx-auto"src="http://openweathermap.org/img/wn/<%= @data["weather"].first["icon"]%>@2x.png">
+  <p class="font-bold"><%= @data["weather"].first["main"]%></p>
+  <p class="text-xs"><%= @data["weather"].first["description"]%></p>
+  <p><%= @data["main"]["temp"]%><span class="italic"> Celcius</span></p>
 </div>
