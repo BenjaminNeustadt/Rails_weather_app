@@ -1,5 +1,14 @@
 # README
 
+
+We use the OpenWeather API:
+https://openweathermap.org/weather-conditions
+
+And are considering using the OpenWeather geolocator:
+https://openweathermap.org/api/geocoding-api
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

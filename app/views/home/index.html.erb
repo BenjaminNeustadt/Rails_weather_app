@@ -1,3 +1,28 @@
+<%# <div align="center" style="padding-bottom:40px">
+  <form class="max-w-sm">
+    <div class="flex items-center border-b border-black-500 py-1">
+      <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="City" aria-label="city name">
+      <button class="flex-shrink-0 bg-gray-500 hover:bg-gray-700  border-gray-500 hover:border-gray-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+        Sign Up
+      </button>
+    </div>
+  </form>
+</div> %>
+
+
+<div align="center" style="padding-bottom:40px">
+  <form>
+    <div>
+      <input type="text" placeholder="Enter a city" aria-label="city name">
+      <button type="button">
+        Search
+      </button>
+    </div>
+  </form>
+</div>
+
+
+
 <div class="w-full text-center">
   <p class="font-mono text-lg font-bold"><%= @weather.city_name%></p>
   <p><%= Date.today.strftime("%A, %B %d") %></p>
