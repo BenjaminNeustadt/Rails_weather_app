@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 class HomeController < ApplicationController
   def index
-    @data = CurrentWeatherService.new(latitude: "25.04776",longtitude:"121.53185", units:"metric").call
+    data = CurrentWeatherService.new(latitude: "25.04776",longtitude:"121.53185", units:"metric").call
+    @weather = Weather.new(data)
   end
 end
 
