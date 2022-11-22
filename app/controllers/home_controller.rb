@@ -1,9 +1,19 @@
 # frozen_string_literal: true
+
+require 'net/http'
+
 class HomeController < ApplicationController
   def index
-    data = CurrentWeatherService.new(latitude: "25.04776",longtitude:"121.53185", units:"metric").call
+    user_input = params[:foo]
+    request_station = "Alaska"
+    url = "https://api.openweathermap.org/geo/1.0/direct?q=#{request_station}&appid=cda8498c63a04d3ca45e4797a9419edb"
+    uri = URI(url)
+    res = Net::HTTP.get_response(uri)
+    @station = JSON.parse(res.body)
+
+    data = CurrentWeatherService.new(latitude: @station.first["lat"] ,longitude: @station.first["lon"], units:"metric").call
     @weather = Weather.new(data)
   end
 end
 
- 
+

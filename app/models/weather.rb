@@ -1,9 +1,20 @@
 # frozen_string_literal: true
 
 class Weather
+
+  private
+
   def initialize(data)
     @data = data.with_indifferent_access
   end
+
+  def current_weather
+    @current_weather ||= data[:weather].first
+  end
+
+  public
+
+  attr_reader :data
 
   def icon_url
     "http://openweathermap.org/img/wn/#{current_weather[:icon]}@2x.png"
@@ -23,14 +34,6 @@ class Weather
 
   def city_name
     data[:name]
-  end
-
-  private
-
-  attr_reader :data
-
-  def current_weather
-    @current_weather ||= data[:weather].first
   end
 
 end
