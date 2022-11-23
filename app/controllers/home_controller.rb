@@ -4,9 +4,12 @@ require 'net/http'
 
 class HomeController < ApplicationController
   def index
-    user_input = params[:foo]
+
+    @user_input = params[:q]
+
     request_station = "Alaska"
     url = "https://api.openweathermap.org/geo/1.0/direct?q=#{request_station}&appid=cda8498c63a04d3ca45e4797a9419edb"
+
     uri = URI(url)
     res = Net::HTTP.get_response(uri)
     @station = JSON.parse(res.body)

@@ -9,25 +9,15 @@
   </form>"
 </div> %>
 
-<%#
-  <form action="/" method="get">
-    <div>
-      <input type="text" placeholder="Enter a city" aria-label="city name">
-      <button type="button">
-        Search
-      </button>
-    </div>
-    </form>
-%>
-
-<div align="center" style="padding-bottom:40px">
-    <%= form_for @station do |form| %>
-       <%= form.text_field :foo %>
-        <%= form.submit 'Search station' %>
-      <% end %>
-</div>
-
 <div class="w-full text-center">
+
+  <form action="#">
+    <input name="q" type="text">
+    <button type="submit">Search</button>
+  </form>
+
+  <%= @user_input %>
+
   <p class="font-mono text-lg font-bold"><%= @weather.city_name%></p>
   <p><%= Date.today.strftime("%A, %B %d") %></p>
   <img class="mx-auto" src="<%= @weather.icon_url%>" />
