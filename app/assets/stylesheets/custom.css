@@ -1,0 +1,12 @@
+h3 {
+  color:black;
+  font-weight:700;
+  margin-top:30px;
+}
+main {
+  border:1px dotted black;
+  background-color:#d3d3d3;
+  padding:30px;
+  margin-top:30px;
+  justify-content:center;
+ }

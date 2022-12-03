@@ -8,12 +8,13 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "custom.css" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <h3 class="w-full text-center" style="color:black;font-weight:700;">RailsWeather</h3>
-    <main class="container mx-auto mt-28 px-5" style="border:1px dotted black; background-color:#d3d3d3; padding:30px;width:400px; justify-content:center;">
+    <h3 class="w-full text-center">Weather App</h3>
+    <main class="container mx-auto mt-28 px-5" style="width:400px;">
       <%= yield %>
     </main>
   </body>
