@@ -3,6 +3,10 @@
 require 'net/http'
 
 class HomeController < ApplicationController
+
+  set :bind, '0.0.0.0'
+  set :port, 8080
+
   def index
 
     @user_input = params[:q]
@@ -13,7 +17,6 @@ class HomeController < ApplicationController
 
     # request_station = "Alaska"
     url = "https://api.openweathermap.org/geo/1.0/direct?q=#{@user_input}&appid=cda8498c63a04d3ca45e4797a9419edb"
-
     uri = URI(url)
     res = Net::HTTP.get_response(uri)
     @station = JSON.parse(res.body)
@@ -22,5 +25,4 @@ class HomeController < ApplicationController
     @weather = Weather.new(data)
   end
 end
-
 
