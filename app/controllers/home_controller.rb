@@ -4,9 +4,6 @@ require 'net/http'
 
 class HomeController < ApplicationController
 
-  set :bind, '0.0.0.0'
-  set :port, 8080
-
   def index
 
     @user_input = params[:q]
